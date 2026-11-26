@@ -1,0 +1,24 @@
+import random
+
+def guess_number():
+    print("|🎲 welcome To The Number Guessing Game !")
+    number_to_guess = random.randint(1, 10)
+    attempts = 0
+    
+    while True:
+        try:
+            user_guess = int(input("guess the number between 1,10 : "))
+            attempts += 1
+            
+            if user_guess < number_to_guess:
+                print("😍too low! try again")
+            elif user_guess > number_to_guess:
+                print("🔥too high! try again")
+            else:
+                print(f"🎉ok you guessed the number in {attempts} tries ")
+                break
+        except ValueError:
+            print("Please Enter The Correct Number!")
+
+if __name__ == "__main__":
+    guess_number()
